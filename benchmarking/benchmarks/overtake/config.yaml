@@ -2,40 +2,51 @@ test:
   workers:
     type: local
     number: 1
+
   rounds:
     - label: solveAllModesGrid
-      txDuration: 50
+      description: on-chain deterministic grid solve across four modes
+      txNumber: 10
       rateControl:
-        type: fixed-load
+        type: fixed-rate
         opts:
-          transactionLoad: 5
+          tps: 100
       workload:
         module: /home/eranda/v2x-net/benchmarking/benchmarks/overtake/gridsolve.js
-        arguments:
-          channel: mychannel
-          contractId: gridsolve
-          invoker: User1
-          steps: 7
-          seed: 0
+        arguments: {}
 
+    # Uncomment these if splitting the process into phases
+    # - label: Endorsement Phase Only
+    #   txNumber: 1000
+    #   rateControl:
+    #     type: fixed-rate
+    #     opts:
+    #       tps: 100
+    #   workload:
+    #     module: /path/to/endorseWorkload.js
+    #     arguments: {}
+
+    # - label: Commit Phase Only
+    #   txNumber: 1000
+    #   rateControl:
+    #     type: fixed-rate
+    #     opts:
+    #       tps: 100
+    #   workload:
+    #     module: /path/to/commitWorkload.js
+    #     arguments: {}
 
 monitors:
   resource:
     - module: docker
       options:
-        interval: 5
-        containers:
-          - all
-      charting:
-        bar:
-          metrics: [Memory(avg), CPU%(avg)]
-        polar:
-          metrics: [all]
-    - module: process
-      options:
         interval: 3
-        processes:
-          - { command: 'node', arguments: 'caliper', multiOutput: 'avg' }
-      charting:
-        bar:
-          metrics: [all]
+        logFile: ./reports/docker-resource-stats.log
+        containers:
+          - orderer.example.com
+          - peer0.org1.example.com
+          - peer1.org1.example.com
+          # - peer0.org2.example.com
+          # - peer1.org2.example.com
+          # - couchdb0
+          # - couchdb1

@@ -1,0 +1,41 @@
+test:
+  workers:
+    type: local
+    number: 1
+  rounds:
+    - label: solveAllModesGrid
+      txDuration: 50
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 5
+      workload:
+        module: /home/eranda/v2x-net/benchmarking/benchmarks/overtake/gridsolve.js
+        arguments:
+          channel: mychannel
+          contractId: gridsolve
+          invoker: User1
+          steps: 7
+          seed: 0
+
+
+monitors:
+  resource:
+    - module: docker
+      options:
+        interval: 5
+        containers:
+          - all
+      charting:
+        bar:
+          metrics: [Memory(avg), CPU%(avg)]
+        polar:
+          metrics: [all]
+    - module: process
+      options:
+        interval: 3
+        processes:
+          - { command: 'node', arguments: 'caliper', multiOutput: 'avg' }
+      charting:
+        bar:
+          metrics: [all]

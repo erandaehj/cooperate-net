@@ -43,12 +43,12 @@ type Params struct {
 	Dtms int64 `json:"dt_ms"` // e.g., 100
 
 	// Safety geometry
-	Ellmm   int64 `json:"ell_mm"`   // 6000
-	D0mm    int64 `json:"d0_mm"`    // 2000
-	TauMs   int64 `json:"tau_ms"`   // 1000
-	TTCmin  int64 `json:"ttc_min"`  // 2000
-	EpsVmmS int64 `json:"eps_v"`    // 1
-	Kappa   int64 `json:"kappa"`    // TTC penalty weight scale (integer)
+	Ellmm   int64 `json:"ell_mm"`  // 6000
+	D0mm    int64 `json:"d0_mm"`   // 2000
+	TauMs   int64 `json:"tau_ms"`  // 1000
+	TTCmin  int64 `json:"ttc_min"` // 2000
+	EpsVmmS int64 `json:"eps_v"`   // 1
+	Kappa   int64 `json:"kappa"`   // TTC penalty weight scale (integer)
 
 	// Speed window
 	Vmin int64 `json:"v_min_mms"` // 60 km/h ~ 16667
@@ -280,7 +280,8 @@ func (c *GridSolveContract) ReadScenario(ctx contractapi.TransactionContextInter
 	s, err := loadScenario(ctx, id)
 	if err != nil {
 		return "", err
-		b, _ := json.Marshal(s)
+	}
+	b, _ := json.Marshal(s)
 	return string(b), nil
 }
 
@@ -706,29 +707,29 @@ func solveModeGrid(front, lv, rear Vehicle, P Params, mode string, steps int) Mo
 
 		if Jscaled < best.Jscaled {
 			best = ModeResult{
-				ScenarioID:     "",
-				Mode:           mode,
-				Success:        true,
-				Status:         "OK",
-				AV:             aV,
-				AF:             aF,
-				AR:             aR,
-				Safety:         S,
-				Comfort:        C,
-				Efficiency:     E,
-				SNorm:          Sn,
-				CNorm:          Cn,
-				ENorm:          En,
-				Jscaled:        Jscaled,
-				MinGapFrontMM:  minGapF,
-				MinGapRearMM:   minGapR,
-				MinTTCFrontMS:  minTTCF,
-				MinTTCRearMS:   minTTCR,
-				GFrontLVT:      g1,
-				GLVRearT:       g2,
-				Sscale:         Sscale,
-				Cscale:         Cscale,
-				Escale:         Escale,
+				ScenarioID:    "",
+				Mode:          mode,
+				Success:       true,
+				Status:        "OK",
+				AV:            aV,
+				AF:            aF,
+				AR:            aR,
+				Safety:        S,
+				Comfort:       C,
+				Efficiency:    E,
+				SNorm:         Sn,
+				CNorm:         Cn,
+				ENorm:         En,
+				Jscaled:       Jscaled,
+				MinGapFrontMM: minGapF,
+				MinGapRearMM:  minGapR,
+				MinTTCFrontMS: minTTCF,
+				MinTTCRearMS:  minTTCR,
+				GFrontLVT:     g1,
+				GLVRearT:      g2,
+				Sscale:        Sscale,
+				Cscale:        Cscale,
+				Escale:        Escale,
 			}
 		}
 	}
