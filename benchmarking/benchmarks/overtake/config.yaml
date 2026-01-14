@@ -3,18 +3,20 @@ test:
     type: local
     number: 1
   rounds:
-    - label: Initiate Overtake
+    - label: solveAllModesGrid
       txDuration: 50
       rateControl:
         type: fixed-load
         opts:
           transactionLoad: 5
       workload:
-        module: /home/eranda/v2x-net/benchmarking/benchmarks/overtake/overtakeBenchmark.js
+        module: /home/eranda/v2x-net/benchmarking/benchmarks/overtake/gridsolve.js
         arguments:
-          vehicleId: "OV001"
-          leadVehicleId: "LV001"
-          followingVehicleId: "FV001"
+          channel: mychannel
+          contractId: gridsolve
+          invoker: User1
+          steps: 7
+          seed: 0
 
 
 monitors:
