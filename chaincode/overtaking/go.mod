@@ -1,4 +1,4 @@
-module github.com/erandaehj/overtakingcc
+module overtaking
 
 go 1.22.2
 
