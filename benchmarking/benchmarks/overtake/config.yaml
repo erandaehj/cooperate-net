@@ -12,8 +12,11 @@ test:
         opts:
           tps: 100
       workload:
-        module: /home/eranda/v2x-net/benchmarking/benchmarks/overtake/gridsolve.js
-        arguments: {}
+        module: /home/eranda/cooperate-net/benchmarking/benchmarks/overtake/gridsolve.js
+        arguments:
+          contractId: overtakingcc
+          channel: mychannel
+          invoker: client0.org1.example.com
 
     # Uncomment these if splitting the process into phases
     # - label: Endorsement Phase Only

@@ -30,7 +30,7 @@ class GridSolveWorkload extends WorkloadModuleBase {
     this.roundArgs = roundArguments;
 
     // Chaincode & channel
-    this.contractId = roundArguments.contractId || 'gridsolve';
+    this.contractId = roundArguments.contractId || 'overtakingcc';
     this.channel = roundArguments.channel || 'mychannel';
 
     // Steps for grid
@@ -92,7 +92,7 @@ class GridSolveWorkload extends WorkloadModuleBase {
       contractId: this.contractId,
       channel: this.channel,
       contractFunction: 'CreateScenario',
-      invokerIdentity: this.roundArgs.invoker || 'User1',
+      invokerIdentity: this.roundArgs.invoker || 'client0.org1.example.com',
       contractArguments: [scenarioId, JSON.stringify(scenario)],
       readOnly: false
     };
@@ -103,7 +103,7 @@ class GridSolveWorkload extends WorkloadModuleBase {
       contractId: this.contractId,
       channel: this.channel,
       contractFunction: 'SolveAllModesGrid',
-      invokerIdentity: this.roundArgs.invoker || 'User1',
+      invokerIdentity: this.roundArgs.invoker || 'client0.org1.example.com',
       contractArguments: [scenarioId, String(this.steps)],
       readOnly: false
     };

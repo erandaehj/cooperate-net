@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the directory and the new file name
-DIRECTORY="/home/eranda/v2x-net/org1/crypto-config-ca/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/keystore"
+DIRECTORY="/home/eranda/cooperate-net/org1/crypto-config-ca/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/keystore"
 NEW_FILE1="8b97b51627ce3d8a6ed8233eeba8d562d1b1d6897befac4d46ae171eeafc4cf0_sk"
 
 # Navigate to the directory
@@ -23,7 +23,7 @@ mv "$OLD_FILE1" "$NEW_FILE1"
 
 
 # Define the directory and the new file name
-DIRECTORY="/home/eranda/v2x-net/org2/crypto-config-ca/peerOrganizations/org2.example.com/users/User1@org2.example.com/msp/keystore"
+DIRECTORY="/home/eranda/cooperate-net/org2/crypto-config-ca/peerOrganizations/org2.example.com/users/User1@org2.example.com/msp/keystore"
 NEW_FILE4="a93d3aec25738f9fea9694d7b55972cf9139f2233e4aa015b7f8d940131ef2cf_sk"
 
 # Navigate to the directory
@@ -46,7 +46,7 @@ mv "$OLD_FILE4" "$NEW_FILE4"
 
 
 # Define the directory and the new file name
-DIRECTORY="/home/eranda/v2x-net/org1/crypto-config-ca/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore"
+DIRECTORY="/home/eranda/cooperate-net/org1/crypto-config-ca/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore"
 NEW_FILE2="340fe681e051a647ded57afbb2b80ea6a5465222e356f6be208abd6b6305e6fc_sk"
 
 # Navigate to the directory
@@ -69,7 +69,7 @@ mv "$OLD_FILE2" "$NEW_FILE2"
 
 
 # Define the directory and the new file name
-DIRECTORY="/home/eranda/v2x-net/org2/crypto-config-ca/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/keystore"
+DIRECTORY="/home/eranda/cooperate-net/org2/crypto-config-ca/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/keystore"
 NEW_FILE3="e4f5b12d4843eb134eda622ce14e002559424d9468ced66b3a671e1431bec1c6_sk"
 
 # Navigate to the directory
@@ -89,7 +89,7 @@ fi
 echo "Found file: $OLD_FILE3. Renaming to $NEW_FILE3."
 mv "$OLD_FILE3" "$NEW_FILE3"
 
-cd /home/eranda/v2x-net
+cd /home/eranda/cooperate-net
 
 npx caliper --version
 
@@ -98,8 +98,8 @@ npx caliper --version
 # npx caliper launch manager     --caliper-bind-sut fabric:2.2     --caliper-workspace .     --caliper-benchconfig benchmarking/benchmarks/overtake/config.yaml     --caliper-networkconfig benchmarking/networks/fabric/v2.1/network-config_2.1.yaml  --caliper-fabric-gateway-enabled --calper-flow-only-test --caliper-fabric-gateway-discovery=false
 
 # # Define constants
-# CONFIG_FILE="/home/eranda/v2x-net/benchmarking/benchmarks/overtake/config.yaml"
-# REPORT_DIR="/home/eranda/v2x-net/reports"
+# CONFIG_FILE="/home/eranda/cooperate-net/benchmarking/benchmarks/overtake/config.yaml"
+# REPORT_DIR="/home/eranda/cooperate-net/reports"
 # REPORT_PREFIX="report"
 # tps=400 # Keep tps constant
 
@@ -138,8 +138,8 @@ npx caliper --version
 
 
 # Define constants
-CONFIG_FILE="/home/eranda/v2x-net/benchmarking/benchmarks/overtake/config.yaml"
-REPORT_DIR="/home/eranda/v2x-net/reports"
+CONFIG_FILE="/home/eranda/cooperate-net/benchmarking/benchmarks/overtake/config.yaml"
+REPORT_DIR="/home/eranda/cooperate-net/reports"
 REPORT_PREFIX="report"
 
 # Define the specific TPS values to iterate over
@@ -179,7 +179,7 @@ echo "Caliper runs completed. Reports saved in $REPORT_DIR"
 # docker stats --no-stream
 
 # cd chaincode/overtaking/
-# go mod init github.com/erandaehj/v2x-net
+# go mod init github.com/erandaehj/cooperate-net
 # go mod tidy
 
 

@@ -21,9 +21,9 @@ clients:
         cryptoStore:
           path: /tmp/hfc-cvs/org1
       clientPrivateKey:
-        path: /home/eranda/v2x-net/org1/crypto-config-ca/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/keystore/8b97b51627ce3d8a6ed8233eeba8d562d1b1d6897befac4d46ae171eeafc4cf0_sk
+        path: /home/eranda/cooperate-net/org1/crypto-config-ca/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/keystore/8b97b51627ce3d8a6ed8233eeba8d562d1b1d6897befac4d46ae171eeafc4cf0_sk
       clientSignedCert:
-        path: /home/eranda/v2x-net/org1/crypto-config-ca/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/signcerts/cert.pem
+        path: /home/eranda/cooperate-net/org1/crypto-config-ca/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/signcerts/cert.pem
 
   client0.org2.example.com:
     client:
@@ -33,9 +33,9 @@ clients:
         cryptoStore:
           path: /tmp/hfc-cvs/org2
       clientPrivateKey:
-        path: /home/eranda/v2x-net/org2/crypto-config-ca/peerOrganizations/org2.example.com/users/User1@org2.example.com/msp/keystore/a93d3aec25738f9fea9694d7b55972cf9139f2233e4aa015b7f8d940131ef2cf_sk
+        path: /home/eranda/cooperate-net/org2/crypto-config-ca/peerOrganizations/org2.example.com/users/User1@org2.example.com/msp/keystore/a93d3aec25738f9fea9694d7b55972cf9139f2233e4aa015b7f8d940131ef2cf_sk
       clientSignedCert:
-        path: /home/eranda/v2x-net/org2/crypto-config-ca/peerOrganizations/org2.example.com/users/User1@org2.example.com/msp/signcerts/cert.pem
+        path: /home/eranda/cooperate-net/org2/crypto-config-ca/peerOrganizations/org2.example.com/users/User1@org2.example.com/msp/signcerts/cert.pem
 
 channels:
   mychannel:
@@ -61,9 +61,9 @@ organizations:
     certificateAuthorities:
       - ca.org1.example.com
     adminPrivateKey:
-      path: /home/eranda/v2x-net/org1/crypto-config-ca/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/340fe681e051a647ded57afbb2b80ea6a5465222e356f6be208abd6b6305e6fc_sk
+      path: /home/eranda/cooperate-net/org1/crypto-config-ca/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/340fe681e051a647ded57afbb2b80ea6a5465222e356f6be208abd6b6305e6fc_sk
     signedCert:
-      path: /home/eranda/v2x-net/org1/crypto-config-ca/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/cert.pem
+      path: /home/eranda/cooperate-net/org1/crypto-config-ca/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/cert.pem
 
   Org2:
     mspid: Org2MSP
@@ -72,9 +72,9 @@ organizations:
     certificateAuthorities:
       - ca.org2.example.com
     adminPrivateKey:
-      path: /home/eranda/v2x-net/org2/crypto-config-ca/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/keystore/e4f5b12d4843eb134eda622ce14e002559424d9468ced66b3a671e1431bec1c6_sk
+      path: /home/eranda/cooperate-net/org2/crypto-config-ca/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/keystore/e4f5b12d4843eb134eda622ce14e002559424d9468ced66b3a671e1431bec1c6_sk
     signedCert:
-      path: /home/eranda/v2x-net/org2/crypto-config-ca/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/signcerts/cert.pem
+      path: /home/eranda/cooperate-net/org2/crypto-config-ca/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/signcerts/cert.pem
 
 orderers:
   orderer.example.com:
@@ -82,7 +82,7 @@ orderers:
     grpcOptions:
       ssl-target-name-override: orderer.example.com
     tlsCACerts:
-      path: /home/eranda/v2x-net/orderer/crypto-config-ca/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+      path: /home/eranda/cooperate-net/orderer/crypto-config-ca/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
 
 peers:
   peer0.org1.example.com:
@@ -91,7 +91,7 @@ peers:
       ssl-target-name-override: peer0.org1.example.com
       grpc.keepalive_time_ms: 600000
     tlsCACerts:
-      path: /home/eranda/v2x-net/org1/crypto-config-ca/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/tlscacerts/tls-localhost-7054-ca-org1-example-com.pem
+      path: /home/eranda/cooperate-net/org1/crypto-config-ca/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/tlscacerts/tls-localhost-7054-ca-org1-example-com.pem
 
   peer0.org2.example.com:
     url: grpcs://localhost:9051
@@ -99,7 +99,7 @@ peers:
       ssl-target-name-override: peer0.org2.example.com
       grpc.keepalive_time_ms: 600000
     tlsCACerts:
-      path: /home/eranda/v2x-net/org2/crypto-config-ca/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/tlscacerts/tls-localhost-8054-ca-org2-example-com.pem
+      path: /home/eranda/cooperate-net/org2/crypto-config-ca/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/tlscacerts/tls-localhost-8054-ca-org2-example-com.pem
 
 certificateAuthorities:
   ca.org1.example.com:
@@ -107,7 +107,7 @@ certificateAuthorities:
     httpOptions:
       verify: false
     tlsCACerts:
-      path: /home/eranda/v2x-net/org1/crypto-config-ca/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
+      path: /home/eranda/cooperate-net/org1/crypto-config-ca/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
     registrar:
       - enrollId: admin
         enrollSecret: adminpw
@@ -117,7 +117,7 @@ certificateAuthorities:
     httpOptions:
       verify: false
     tlsCACerts:
-      path: /home/eranda/v2x-net/org2/crypto-config-ca/peerOrganizations/org2.example.com/tlsca/tlsca.org2.example.com-cert.pem
+      path: /home/eranda/cooperate-net/org2/crypto-config-ca/peerOrganizations/org2.example.com/tlsca/tlsca.org2.example.com-cert.pem
     registrar:
       - enrollId: admin
         enrollSecret: adminpw
