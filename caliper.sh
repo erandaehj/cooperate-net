@@ -143,7 +143,7 @@ REPORT_DIR="/home/eranda/cooperate-net/reports"
 REPORT_PREFIX="report"
 
 # Define the specific TPS values to iterate over
-TPS_VALUES=(100)  # Modify these values as needed
+TPS_VALUES=(75)  # Modify these values as needed
 
 # Ensure report directory exists
 mkdir -p "$REPORT_DIR"

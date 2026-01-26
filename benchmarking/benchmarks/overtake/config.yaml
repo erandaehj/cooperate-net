@@ -1,22 +1,25 @@
 test:
   workers:
     type: local
-    number: 1
+    number: 4
 
   rounds:
     - label: solveAllModesGrid
       description: on-chain deterministic grid solve across four modes
-      txNumber: 10
+      txNumber: 10000
       rateControl:
         type: fixed-rate
         opts:
-          tps: 100
+          tps: 75
       workload:
         module: /home/eranda/cooperate-net/benchmarking/benchmarks/overtake/gridsolve.js
         arguments:
           contractId: overtakingcc
           channel: mychannel
           invoker: client0.org1.example.com
+          steps: 7
+          seed: 1
+          poolSize: 120
 
     # Uncomment these if splitting the process into phases
     # - label: Endorsement Phase Only
@@ -24,7 +27,7 @@ test:
     #   rateControl:
     #     type: fixed-rate
     #     opts:
-    #       tps: 100
+    #       tps: 75
     #   workload:
     #     module: /path/to/endorseWorkload.js
     #     arguments: {}
@@ -34,7 +37,7 @@ test:
     #   rateControl:
     #     type: fixed-rate
     #     opts:
-    #       tps: 100
+    #       tps: 75
     #   workload:
     #     module: /path/to/commitWorkload.js
     #     arguments: {}
