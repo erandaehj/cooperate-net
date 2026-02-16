@@ -10,7 +10,7 @@ test:
       rateControl:
         type: fixed-rate
         opts:
-          tps: 75
+          tps: 100
       workload:
         module: /home/eranda/cooperate-net/benchmarking/benchmarks/overtake/gridsolve.js
         arguments:
@@ -27,7 +27,7 @@ test:
     #   rateControl:
     #     type: fixed-rate
     #     opts:
-    #       tps: 75
+    #       tps: 100
     #   workload:
     #     module: /path/to/endorseWorkload.js
     #     arguments: {}
@@ -37,7 +37,7 @@ test:
     #   rateControl:
     #     type: fixed-rate
     #     opts:
-    #       tps: 75
+    #       tps: 100
     #   workload:
     #     module: /path/to/commitWorkload.js
     #     arguments: {}
