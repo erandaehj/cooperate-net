@@ -1,12 +1,12 @@
 test:
   workers:
     type: local
-    number: 4
+    number: 2
 
   rounds:
     - label: solveAllModesGrid
       description: on-chain deterministic grid solve across four modes
-      txNumber: 1000
+      txNumber: 10000
       rateControl:
         type: fixed-rate
         opts:
