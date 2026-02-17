@@ -6,7 +6,7 @@ test:
   rounds:
     - label: solveAllModesGrid
       description: on-chain deterministic grid solve across four modes
-      txNumber: 10000
+      txNumber: 1000
       rateControl:
         type: fixed-rate
         opts:
@@ -19,7 +19,7 @@ test:
           invoker: client0.org1.example.com
           steps: 7
           seed: 1
-          poolSize: 120
+          poolSize: 20
 
     # Uncomment these if splitting the process into phases
     # - label: Endorsement Phase Only
