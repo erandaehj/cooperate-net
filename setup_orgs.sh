@@ -28,7 +28,7 @@ export PATH=${PWD}/bin:$PATH
 
 echo -e "======Switching to git master======\n"
 
-git switch master
+git switch main
 
 echo -e "======Setting up Org1======\n"
 (cd org1; ./1_enrollOrg1AdminAndUsers.sh; ./2_generateMSPOrg1.sh)
