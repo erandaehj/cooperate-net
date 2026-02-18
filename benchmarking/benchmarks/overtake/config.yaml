@@ -1,7 +1,7 @@
 test:
   workers:
     type: local
-    number: 2
+    number: 4
 
   rounds:
     - label: solveAllModesGrid
